@@ -1,8 +1,10 @@
-export function PublicRoute({component: C}){
+import { Navigate } from "react-router";
+
+export function PublicRoute({isAuth, component: Comopnent}){
     return(
         <>
         <h1>PUBLIC</h1>
-        <C />
+        {isAuth ? <Navigate to="/" /> : <Comopnent />}
         </>
     )
 }

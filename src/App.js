@@ -6,7 +6,7 @@ import {Register} from "./pages/Register";
 import {PublicRoute} from "./rautes/PublicRoute";
 import {PrivateRoute} from "./rautes/PrivateRoute";
 
-
+const isAuth=false;
 function App() {
   return (
     <div className="App">
@@ -27,9 +27,9 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<PrivateRoute component={Home}/>}/>
-          <Route path="/login" element={<PublicRoute component={Login}/>}/>
-          <Route path="/register" element={<PublicRoute component={Register}/>}/>
+          <Route path="/" element={<PrivateRoute isAuth={isAuth} component={Home}/>}/>
+          <Route path="/login" element={<PublicRoute sAuth={isAuth} component={Login}/>}/>
+          <Route path="/register" element={<PublicRoute sAuth={isAuth} component={Register}/>}/>
 
         </Routes>
       </main>
